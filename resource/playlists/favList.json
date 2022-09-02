@@ -1,0 +1,1941 @@
+[
+    {
+        "name": "Lv.11 (NC) [S]",
+        "play_style": "SP",
+        "charts": [
+            {
+                "entry_id": 11001,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 14035,
+                "difficulty": "hyper"
+            },
+            {
+                "entry_id": 15005,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 15045,
+                "difficulty": "leggendaria"
+            },
+            {
+                "entry_id": 16002,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 16004,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 16031,
+                "difficulty": "leggendaria"
+            },
+            {
+                "entry_id": 16042,
+                "difficulty": "leggendaria"
+            },
+            {
+                "entry_id": 17024,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 18004,
+                "difficulty": "hyper"
+            },
+            {
+                "entry_id": 18056,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 20046,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 20095,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21037,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24085,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25059,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26041,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26099,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27013,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28020,
+                "difficulty": "another"
+            }
+        ]
+    },
+    {
+        "name": "Lv.11 (NC) [A]",
+        "play_style": "SP",
+        "charts": [
+            {
+                "entry_id": 1017,
+                "difficulty": "leggendaria"
+            },
+            {
+                "entry_id": 7034,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 8017,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 11030,
+                "difficulty": "hyper"
+            },
+            {
+                "entry_id": 12030,
+                "difficulty": "leggendaria"
+            },
+            {
+                "entry_id": 12031,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 13038,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 13051,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 15025,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 15026,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 15041,
+                "difficulty": "leggendaria"
+            },
+            {
+                "entry_id": 15057,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 16020,
+                "difficulty": "hyper"
+            },
+            {
+                "entry_id": 16037,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 16053,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 17016,
+                "difficulty": "hyper"
+            },
+            {
+                "entry_id": 17025,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 18015,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 18022,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 18067,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 19015,
+                "difficulty": "another",
+                "bar_style": "lightning"
+            },
+            {
+                "entry_id": 19032,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 19069,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 19072,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 20072,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21007,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21056,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21066,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22010,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23068,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23069,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24045,
+                "difficulty": "another",
+                "bar_style": "lightning"
+            },
+            {
+                "entry_id": 24057,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24087,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25039,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25069,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25089,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25095,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26049,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26053,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26074,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26077,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26081,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26084,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26092,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27033,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27036,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28045,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28056,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28080,
+                "difficulty": "another"
+            }
+        ]
+    },
+    {
+        "name": "Lv.11 (NC) [B]",
+        "play_style": "SP",
+        "charts": [
+            {
+                "entry_id": 3005,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 6013,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 7032,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 8006,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 9033,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 10024,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 10040,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 10041,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 11013,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 12025,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 13002,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 13029,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 14020,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 15007,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 15038,
+                "difficulty": "leggendaria"
+            },
+            {
+                "entry_id": 15055,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 16000,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 16015,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 16038,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 17008,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 17023,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 17027,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 17028,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 17041,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 17054,
+                "difficulty": "hyper"
+            },
+            {
+                "entry_id": 18008,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 18010,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 18013,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 18014,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 18025,
+                "difficulty": "leggendaria"
+            },
+            {
+                "entry_id": 18044,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 18051,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 18064,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 19004,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 19031,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 19053,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 19058,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 19074,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 20019,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 20025,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 20028,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 20031,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 20035,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 20040,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 20053,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 20086,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 20087,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 20090,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 20096,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21014,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21024,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21027,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21041,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21062,
+                "difficulty": "hyper"
+            },
+            {
+                "entry_id": 21063,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21072,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21079,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21090,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22035,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22054,
+                "difficulty": "hyper"
+            },
+            {
+                "entry_id": 22058,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22067,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22068,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22092,
+                "difficulty": "leggendaria"
+            },
+            {
+                "entry_id": 23017,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23030,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23046,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23050,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23053,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23057,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23066,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23070,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23084,
+                "difficulty": "leggendaria"
+            },
+            {
+                "entry_id": 24015,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24029,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24030,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24080,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24083,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25001,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25067,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25082,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25092,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26004,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26007,
+                "difficulty": "hyper"
+            },
+            {
+                "entry_id": 26020,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26023,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26046,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26051,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26113,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27002,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27011,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27042,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27058,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27082,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27096,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28009,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28015,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28029,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28032,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28042,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28049,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28050,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28057,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28063,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28067,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28071,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28076,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28085,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28086,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28088,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28095,
+                "difficulty": "another"
+            }
+        ]
+    },
+    {
+        "name": "Lv.11 (NC) [C]",
+        "play_style": "SP",
+        "charts": [
+            {
+                "entry_id": 4001,
+                "difficulty": "leggendaria"
+            },
+            {
+                "entry_id": 4004,
+                "difficulty": "another",
+                "bar_style": "lightning"
+            },
+            {
+                "entry_id": 6004,
+                "difficulty": "leggendaria"
+            },
+            {
+                "entry_id": 6016,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 8032,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 8045,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 9028,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 10004,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 11026,
+                "difficulty": "hyper"
+            },
+            {
+                "entry_id": 11034,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 12008,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 12029,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 12053,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 13010,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 13026,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 13040,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 13044,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 13046,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 14001,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 14004,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 14033,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 15004,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 15008,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 15030,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 15061,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 16005,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 16017,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 16023,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 16031,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 17004,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 18002,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 18021,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 18042,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 18045,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 19009,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 19018,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 19059,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 20055,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 20059,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 20064,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21008,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21013,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21018,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21026,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21068,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21077,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21078,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21084,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21085,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22008,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22031,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22047,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22061,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22064,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22086,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22092,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22094,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22098,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23003,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23019,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23022,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23028,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23031,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23032,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23044,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23051,
+                "difficulty": "hyper",
+                "bar_style": "lightning"
+            },
+            {
+                "entry_id": 23073,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23082,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23093,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23095,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24004,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24010,
+                "difficulty": "hyper"
+            },
+            {
+                "entry_id": 24011,
+                "difficulty": "leggendaria"
+            },
+            {
+                "entry_id": 24028,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24033,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24041,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24043,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24050,
+                "difficulty": "hyper"
+            },
+            {
+                "entry_id": 24063,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24067,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24069,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24071,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24079,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24081,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25005,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25007,
+                "difficulty": "hyper"
+            },
+            {
+                "entry_id": 25010,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25016,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25018,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25022,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25028,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25051,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25073,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25078,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25079,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25090,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26016,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26028,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26050,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26064,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26091,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26111,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27001,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27010,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27014,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27021,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27024,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27029,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27046,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27065,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27077,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27106,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27108,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27113,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27116,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28000,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28004,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28062,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28094,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28117,
+                "difficulty": "another",
+                "bar_style": "lightning"
+            }
+        ]
+    },
+    {
+        "name": "Lv.11 (NC) [D]",
+        "play_style": "SP",
+        "charts": [
+            {
+                "entry_id": 4005,
+                "difficulty": "leggendaria"
+            },
+            {
+                "entry_id": 9057,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 10016,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 11012,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 11014,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 11025,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 11031,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 11035,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 12002,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 12015,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 12019,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 12049,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 13000,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 14007,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 14009,
+                "difficulty": "hyper"
+            },
+            {
+                "entry_id": 14021,
+                "difficulty": "hyper"
+            },
+            {
+                "entry_id": 14031,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 14046,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 15000,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 15020,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 15028,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 15032,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 15049,
+                "difficulty": "hyper"
+            },
+            {
+                "entry_id": 15052,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 15059,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 16008,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 16011,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 16016,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 16050,
+                "difficulty": "leggendaria"
+            },
+            {
+                "entry_id": 17064,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 18009,
+                "difficulty": "hyper"
+            },
+            {
+                "entry_id": 18066,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 19020,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 19022,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 20018,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 20036,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 20039,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 20100,
+                "difficulty": "leggendaria"
+            },
+            {
+                "entry_id": 21001,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21016,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21034,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22024,
+                "difficulty": "leggendaria"
+            },
+            {
+                "entry_id": 22034,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22040,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22041,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22057,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22062,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22063,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23008,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23043,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23048,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23052,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23086,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24000,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24002,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24054,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24075,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24082,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24093,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25038,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25042,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25043,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25047,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25053,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25086,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26005,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26009,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26018,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26055,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26058,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26060,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26076,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27005,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27023,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27050,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27068,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27069,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27087,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27103,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27107,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27110,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28010,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28024,
+                "difficulty": "hyper"
+            },
+            {
+                "entry_id": 28046,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28048,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28059,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28060,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28064,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28065,
+                "difficulty": "another"
+            }
+        ]
+    },
+    {
+        "name": "Lv.11 (NC) [E]",
+        "play_style": "SP",
+        "charts": [
+            {
+                "entry_id": 3008,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 8028,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 10018,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 11032,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 11052,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 14014,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 15001,
+                "difficulty": "hyper"
+            },
+            {
+                "entry_id": 15009,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 17000,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 17046,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 18028,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 18050,
+                "difficulty": "hyper"
+            },
+            {
+                "entry_id": 19063,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 20091,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21003,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21020,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21053,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21060,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21082,
+                "difficulty": "hyper"
+            },
+            {
+                "entry_id": 21083,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21087,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22006,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22029,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22044,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22048,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22049,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22060,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22088,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23002,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 23021,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24016,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24017,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24022,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24025,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24027,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25048,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25050,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25084,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26044,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26045,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26112,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27016,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27038,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27073,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27080,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28001,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28012,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28047,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28109,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28111,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28113,
+                "difficulty": "another"
+            }
+        ]
+    },
+    {
+        "name": "Lv.11 (NC) [F]",
+        "play_style": "SP",
+        "charts": [
+            {
+                "entry_id": 6015,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 6022,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 8018,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 10025,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 11008,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 12011,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 13003,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 13005,
+                "difficulty": "hyper"
+            },
+            {
+                "entry_id": 13039,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 14052,
+                "difficulty": "hyper"
+            },
+            {
+                "entry_id": 16018,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 17002,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 17014,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 17015,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 17057,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 18012,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 18030,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 18043,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21006,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 21042,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22002,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22014,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22075,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 22100,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24084,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 24090,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 25033,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26040,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 26115,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27061,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 27090,
+                "difficulty": "another"
+            },
+            {
+                "entry_id": 28069,
+                "difficulty": "another"
+            }
+        ]
+    }
+]
