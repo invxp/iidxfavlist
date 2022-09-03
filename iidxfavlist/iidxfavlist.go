@@ -11,6 +11,7 @@ import (
 	"path"
 	"strconv"
 	"strings"
+	"time"
 )
 
 type Iidxfavlist struct {
@@ -127,14 +128,9 @@ func (iidx *Iidxfavlist) reloadFavList() {
 
 		for _, fav := range iidxFav.Fav {
 			for i, chart := range fav.Charts {
-				if music, ok := iidx.musicListByID[chart.EntryId]; ok {
-					fav.Charts[i].Artist = music.Artist
-					fav.Charts[i].Title = music.Title
-				} else {
-					fav.Charts[i].Artist = "unknown"
-					fav.Charts[i].Title = "unknown"
-					iidx.logf("music not found: %v", chart.EntryId)
-				}
+				music := iidx.findMusicByID(chart.EntryId)
+				fav.Charts[i].Artist = music.Artist
+				fav.Charts[i].Title = music.Title
 				iidxFav.ChartCount++
 			}
 		}
@@ -149,6 +145,7 @@ func (iidx *Iidxfavlist) showHelp() {
 	fmt.Println("==========================COMMANDS============================")
 	fmt.Printf("%s: edit favourite song\n", color.LightRed.Render("e"))
 	fmt.Printf("%s: list favourite song\n", color.LightRed.Render("l"))
+	fmt.Printf("%s: rename orr modify mode favourite list\n", color.LightRed.Render("r"))
 	fmt.Printf("%s: search from songlist.exp:'s {id}/{artist}/{songname}'\n", color.LightRed.Render("s"))
 	fmt.Printf("%s: search from favlist.exp:'f {id}/{artist}/{songname}'\n", color.LightRed.Render("f"))
 
@@ -162,7 +159,7 @@ func (iidx *Iidxfavlist) Run() {
 	for {
 		var searchExp string
 		iidx.showHelp()
-		line := scanInput()
+		_ ,line := scanInput()
 		if len(line) <= 0 {
 			continue
 		}
@@ -173,6 +170,8 @@ func (iidx *Iidxfavlist) Run() {
 		switch cmd {
 		case "e":
 			iidx.editFavList()
+		case "r":
+			iidx.renameList()
 		case "l":
 			iidx.showFavList()
 		case "s":
@@ -203,12 +202,139 @@ func levelColor(diff, title string) string {
 	return b(c(title))
 }
 
-func scanInput() string {
+func scanInput(prompt ...interface{}) (int, string) {
+	fmt.Print(prompt...)
 	line, _, err := bufio.NewReader(os.Stdin).ReadLine()
 	if err != nil {
 		panic(err)
 	}
-	return string(line)
+	num, _ := strconv.Atoi(string(line))
+	return num, strings.ToLower(string(line))
+}
+
+func scanOriginInput(prompt ...interface{}) (int, string) {
+	fmt.Print(prompt...)
+	line, _, err := bufio.NewReader(os.Stdin).ReadLine()
+	if err != nil {
+		panic(err)
+	}
+	num, _ := strconv.Atoi(string(line))
+	return num, string(line)
+}
+
+func (iidx *Iidxfavlist) createFavList() {
+	now := time.Now().Format("20060102-150405")
+	var spMusic, dpMusic IIDXMusicInfoDetail
+	for _, m := range iidx.musicListByID {
+		spMusic = m
+		break
+	}
+	for _, m := range iidx.musicListByID {
+		dpMusic = m
+		break
+	}
+	iidx.favList = append(iidx.favList, IIDXFav{FileName:  "playlists/"+now + ".json", ChartCount: 2, Fav: []IIDXFavFile{
+		{Name:"Favourite-SP-" + now, PlayStyle: "SP", Charts: []IIDXFavChart{{EntryId: spMusic.ID, Difficulty: LevelAnother, Title: spMusic.Title, Artist: spMusic.Artist}}},
+		{Name:"Favourite-DP-" + now, PlayStyle: "DP", Charts: []IIDXFavChart{{EntryId: dpMusic.ID, Difficulty: LevelAnother, Title: dpMusic.Title, Artist: dpMusic.Artist}}},
+	}})
+	fmt.Println("create new fav list...")
+}
+
+func (iidx *Iidxfavlist) createFolder(list *[]IIDXFavFile) {
+	now := time.Now().Format("20060102-150405")
+	var music IIDXMusicInfoDetail
+	for _, m := range iidx.musicListByID {
+		music = m
+		break
+	}
+	*list = append(*list, IIDXFavFile{Name: "Favourite-SP-" + now, PlayStyle: "SP", Charts: []IIDXFavChart{{
+		EntryId: music.ID, Difficulty: LevelAnother, Title: music.Title, Artist: music.Artist,
+	}}})
+	fmt.Println("create new folder")
+}
+
+func (iidx *Iidxfavlist) findMusicByID(id int) IIDXMusicInfoDetail {
+	music, ok := iidx.musicListByID[id]
+	if !ok {
+		music.ID = id
+		music.Title = "unknown"
+		music.Artist = "unknown"
+		fmt.Println(music.ID, "not found in music list")
+	}
+	return music
+}
+
+func (iidx *Iidxfavlist) findInputSong(songNum int, charts []IIDXFavChart) (IIDXMusicInfoDetail, int){
+	idx := -1
+	for i, s := range charts {
+		if songNum == s.EntryId {
+			idx = i
+			break
+		}
+	}
+	return iidx.findMusicByID(songNum), idx
+}
+
+func getInputLevel(level int) string {
+	if level <= 0 || level > 5 {
+		level = 4
+	}
+	switch level {
+	case 1:
+		return LevelBasic
+	case 2:
+		return LevelNormal
+	case 3:
+		return LevelHyper
+	case 4:
+		return LevelAnother
+	case 5:
+		return LevelLegend
+	}
+	return ""
+}
+
+func (iidx *Iidxfavlist) renameList() {
+	iidx.reloadFavList()
+
+	for {
+		iidx.printFavList(true, false, false)
+		fileNum, _ := scanInput("input file number(default 0):")
+
+		if len(iidx.favList) <= fileNum {
+			continue
+		}
+
+		for i, song := range iidx.favList[fileNum].Fav {
+			fmt.Printf("%s.%s.%s.%d(songs)\n", color.BgBlue.Render(color.FgBlack.Render(i)), song.Name, song.PlayStyle, len(song.Charts))
+		}
+
+		folderNum, _ := scanInput("input folder number(default 0):")
+		if len(iidx.favList[fileNum].Fav) <= folderNum {
+			continue
+		}
+
+		_, newName := scanOriginInput("input new folder name(current: "+levelColor(LevelAnother, iidx.favList[fileNum].Fav[folderNum].Name)+"):")
+		fmt.Printf("%s rename to %s(Y/n):", iidx.favList[fileNum].Fav[folderNum].Name, levelColor(LevelBasic, newName))
+		_, input := scanInput()
+		if input == "n" {
+			continue
+		}
+		iidx.favList[fileNum].Fav[folderNum].Name = newName
+		_, newMode := scanOriginInput("input folder mode(default: "+iidx.favList[fileNum].Fav[folderNum].PlayStyle+"):")
+		if len(newMode) > 0 {
+			fmt.Printf("%s switch mode to %s(Y/n):", iidx.favList[fileNum].Fav[folderNum].PlayStyle, levelColor(LevelBasic, strings.ToUpper(newMode)))
+			_, input = scanInput()
+			if input == "n" {
+				continue
+			}
+			iidx.favList[fileNum].Fav[folderNum].PlayStyle = strings.ToUpper(newMode)
+		}
+
+		bytes, _ := json.MarshalIndent(iidx.favList[fileNum].Fav, "", " ")
+		err := ioutil.WriteFile(iidx.favList[fileNum].FileName, bytes, 0666)
+		fmt.Println("rename fav list saved", err)
+	}
 }
 
 func (iidx *Iidxfavlist) editFavList() {
@@ -216,115 +342,97 @@ func (iidx *Iidxfavlist) editFavList() {
 
 	for {
 		iidx.printFavList(true, false, false)
-		fmt.Println("'b' to menu")
-		fmt.Print("input file number(default 0):")
-		input := scanInput()
-		if strings.ToLower(input) == "b" {
+		fileNum, input := scanInput("'b' to menu\ninput file number(default 0):")
+		if input == "b" {
 			return
 		}
-		num, _ := strconv.Atoi(input)
-		if len(iidx.favList) <= num {
-			continue
+		if len(iidx.favList) <= fileNum {
+			iidx.createFavList()
+			fileNum = len(iidx.favList) - 1
 		}
-		list := iidx.favList[num]
-	Folder:
+		list := iidx.favList[fileNum]
+
 		for i, song := range list.Fav {
 			fmt.Printf("%s.%s.%s.%d(songs)\n", color.BgBlue.Render(color.FgBlack.Render(i)), song.Name, song.PlayStyle, len(song.Charts))
 		}
-		fmt.Println("'b' to select file")
-		fmt.Print("input folder number(default 0):")
-		input = scanInput()
-		if strings.ToLower(input) == "b" {
+		folderNum, input := scanInput("'b' to select file\ninput folder number(default 0):")
+		if input == "b" {
 			continue
 		}
-		num, _ = strconv.Atoi(input)
-		if len(list.Fav) <= num {
-			goto Folder
+
+		if len(list.Fav) <= folderNum {
+			iidx.createFolder(&iidx.favList[fileNum].Fav)
+			iidx.favList[fileNum].ChartCount++
+			folderNum = len(iidx.favList[fileNum].Fav) - 1
 		}
-		charts := list.Fav[num]
+		charts := iidx.favList[fileNum].Fav[folderNum]
 	Chart:
 		for _, chart := range charts.Charts {
 			fmt.Printf("%s.%s.%s\n", color.BgBlue.Render(color.FgBlack.Render(chart.EntryId)), levelColor(chart.Difficulty, chart.Title), chart.Artist)
 		}
-		fmt.Println("'b' to select folder")
-		fmt.Print("input song id:")
-		input = scanInput()
-		if strings.ToLower(input) == "b" {
-			goto Folder
-		}
-		num, _ = strconv.Atoi(input)
+		songNum, _ := scanInput("'b' to select folder\ninput song id:")
+		originMusic, idx := iidx.findInputSong(songNum, charts.Charts)
 
-		for i, song := range charts.Charts {
-			if num == song.EntryId {
-			Switch:
-				fmt.Println("'b' to select target")
-				fmt.Printf("%s.%s switch to id:", levelColor(song.Difficulty, song.Title), song.Artist)
-				input = scanInput()
-				if strings.ToLower(input) == "b" {
-					goto Chart
-				}
-				n, _ := strconv.Atoi(input)
-				var music IIDXMusicInfoDetail
-				var ok bool
-				if music, ok = iidx.musicListByID[n]; ok {
-					fmt.Printf("%d.%s.%s(Y/n):", music.ID, music.Title, music.Artist)
-				} else {
-					music.ID = n
-					music.Title = "unknown"
-					music.Artist = "unknown"
-					fmt.Printf("%d not found in music list(Y/n):", music.ID)
-				}
-				if strings.ToLower(scanInput()) == "n" {
-					goto Switch
-				}
-			Level:
-				fmt.Println("'b' to select music")
-				fmt.Printf("%d.%s.%s select level number(default: another(4))\n", n, levelColor(LevelAnother, music.Title), music.Artist)
-				fmt.Printf("%s(1),%s(2),%s(3),%s(4),%s(5):", LevelBasic, LevelNormal, LevelHyper, LevelAnother, LevelLegend)
-				realLevel := LevelAnother
-				input = scanInput()
-				if strings.ToLower(input) == "b" {
-					goto Switch
-				}
-				n, _ = strconv.Atoi(input)
-				if n <= 0 || n > 5 {
-					n = 4
-				}
-				switch n {
-				case 1:
-					realLevel = LevelBasic
-				case 2:
-					realLevel = LevelNormal
-				case 3:
-					realLevel = LevelHyper
-				case 4:
-					realLevel = LevelAnother
-				case 5:
-					realLevel = LevelLegend
-				default:
-					realLevel = LevelAnother
-				}
-				fmt.Printf("%s switch to %s(Y/n):", levelColor(song.Difficulty, song.Title), levelColor(realLevel, music.Title))
-				if strings.ToLower(scanInput()) == "n" {
-					goto Level
-				}
-				charts.Charts[i].EntryId = music.ID
-				charts.Charts[i].Artist = music.Artist
-				charts.Charts[i].Title = music.Title
-				charts.Charts[i].Difficulty = realLevel
-
-				bytes, _ := json.MarshalIndent(list.Fav, "", " ")
-				err := ioutil.WriteFile(list.FileName, bytes, 0x644)
-				fmt.Println("fav list saved", err)
+		if idx > -1 {
+		Switch:
+			existSongNum, input := scanInput("'b' to select target\n"+originMusic.Title+"."+ originMusic.Artist +" switch to id:")
+			if input == "b" {
+				goto Chart
 			}
+			if existSongNum == 0 {
+				existSongNum = songNum
+			}
+			targetMusic := iidx.findMusicByID(existSongNum)
+		Level:
+			levelNum, input := scanInput("'b' to select music\n"+targetMusic.Title + "." + targetMusic.Artist + "(default: another(4)" +
+				LevelBasic+"(1),"+LevelNormal+"(2),"+LevelHyper+"(3),"+LevelAnother+"(4),"+LevelLegend+"(5)")
+
+			if input == "b" {
+				goto Switch
+			}
+
+			level := getInputLevel(levelNum)
+
+			fmt.Printf("%s switch to %s(Y/n):", originMusic.Title, levelColor(level,targetMusic.Title))
+			_, input = scanInput()
+			if input == "n" {
+				goto Level
+			}
+
+			iidx.favList[fileNum].Fav[folderNum].Charts[idx].EntryId = targetMusic.ID
+			iidx.favList[fileNum].Fav[folderNum].Charts[idx].Artist = targetMusic.Artist
+			iidx.favList[fileNum].Fav[folderNum].Charts[idx].Title = targetMusic.Title
+			iidx.favList[fileNum].Fav[folderNum].Charts[idx].Difficulty = level
+
+			bytes, _ := json.MarshalIndent(iidx.favList[fileNum].Fav, "", " ")
+			err := ioutil.WriteFile(iidx.favList[fileNum].FileName, bytes, 0666)
+			fmt.Println("modify fav list saved", err)
+		} else {
+			ReLevel:
+			levelNum, input := scanInput("'b' to select music\n"+originMusic.Title + "." + originMusic.Artist + "(default: another(4)" +
+				LevelBasic+"(1),"+LevelNormal+"(2),"+LevelHyper+"(3),"+LevelAnother+"(4),"+LevelLegend+"(5):")
+
+			if input == "b" {
+				goto Chart
+			}
+
+			level := getInputLevel(levelNum)
+
+			fmt.Printf("add %s(Y/n):", levelColor(level,originMusic.Title))
+
+			_, input = scanInput()
+			if input == "n" {
+				goto ReLevel
+			}
+
+			iidx.favList[fileNum].Fav[folderNum].Charts = append(iidx.favList[fileNum].Fav[folderNum].Charts, IIDXFavChart{EntryId: originMusic.ID, Difficulty: level, Title: originMusic.Title, Artist: originMusic.Artist})
+			iidx.favList[fileNum].ChartCount++
+
+			bytes, _ := json.MarshalIndent(iidx.favList[fileNum].Fav, "", " ")
+			err := ioutil.WriteFile(iidx.favList[fileNum].FileName, bytes, 0666)
+			fmt.Println("add fav list saved", err)
 		}
-
-		goto Chart
 	}
-}
-
-func (iidx *Iidxfavlist) createFavList() {
-	//TODO
 }
 
 func (iidx *Iidxfavlist) showFavList() {
