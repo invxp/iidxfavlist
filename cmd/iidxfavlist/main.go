@@ -1,8 +1,9 @@
 package main
 
 import (
-	"github.com/invxp/iidxfavlist/iidxfavlist"
 	"log"
+
+	"github.com/invxp/iidxfavlist/iidxfavlist"
 )
 
 const (
@@ -10,11 +11,7 @@ const (
 )
 
 func main() {
-	srv, err := iidxfavlist.New()
-
-	if err != nil {
-		log.Panic(err)
-	}
+	srv := iidxfavlist.New()
 
 	log.Println("start program version", version)
 
