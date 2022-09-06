@@ -31,7 +31,6 @@ func New(opts ...Options) *Iidxfavlist {
 //Run 执行功能
 func (iidx *Iidxfavlist) Run() {
 	iidx.loadMusicList("data/info/0/video_music_list.xml")
-
 	for {
 		showHelp()
 		cmd, arg := readCommandLine()
@@ -247,33 +246,50 @@ func (iidx *Iidxfavlist) renameList() {
 	}
 }
 
-func (iidx *Iidxfavlist) replaceSong(music IIDXMusicInfoDetail, fileIdx, folderIdx, musicIdx int) bool {
+func (iidx *Iidxfavlist) editSong(music IIDXMusicInfoDetail, fileIdx, folderIdx, musicIdx int) bool {
 	var songNum = 0
-
+	var delete = false
+	var input string
 	for {
-		songNum, _ = scanInput(music.Title + "." + music.Artist + " switch to id")
+		songNum, input = scanInput("'" + color.BgGreen.Render("b") + "' to return\n" + "'" + color.BgRed.Render("d") + "' to delete\n" + music.Title + "." + music.Artist + " input new id or delete")
 		if songNum > 0 {
+			break
+		}
+		if input == "b" {
+			return false
+		}
+		if input == "d" {
+			delete = true
 			break
 		}
 	}
 
-	targetMusic := iidx.findMusicByID(songNum)
+	if delete {
+		iidx.logf("delete %s(y/N)", music.Title)
+		_, input := scanInput()
+		if input != "y" {
+			iidx.logfn("delete canceled")
+			return false
+		}
+		iidx.favList[fileIdx].Fav[folderIdx].Charts = deleteSlice(musicIdx, iidx.favList[fileIdx].Fav[folderIdx].Charts)
+	} else {
+		targetMusic := iidx.findMusicByID(songNum)
 
-	levelNum, _ := scanInput(targetMusic.Title + "." + targetMusic.Artist + "(default: " + levelColor(LevelAnother, "another(4)\n") +
-		levelColor(LevelBeginner, LevelBeginner) + "(1)," + levelColor(LevelNormal, LevelNormal) + "(2)," + levelColor(LevelHyper, LevelHyper) + "(3)," + levelColor(LevelAnother, LevelAnother) + "(4)," + levelColor(LevelLegend, LevelLegend) + "(5)")
-	level := getInputLevel(levelNum)
+		levelNum, _ := scanInput(targetMusic.Title + "." + targetMusic.Artist + "(default: " + levelColor(LevelAnother, "another(4)\n") +
+			levelColor(LevelBeginner, LevelBeginner) + "(1)," + levelColor(LevelNormal, LevelNormal) + "(2)," + levelColor(LevelHyper, LevelHyper) + "(3)," + levelColor(LevelAnother, LevelAnother) + "(4)," + levelColor(LevelLegend, LevelLegend) + "(5)")
+		level := getInputLevel(levelNum)
 
-	iidx.logf("%s switch to %s(Y/n)", music.Title, levelColor(level, targetMusic.Title))
-	_, input := scanInput()
-	if input == "n" {
-		iidx.logfn("repalce canceled")
-		return false
+		iidx.logf("%s switch to %s(Y/n)", music.Title, levelColor(level, targetMusic.Title))
+		_, input := scanInput()
+		if input == "n" {
+			iidx.logfn("repalce canceled")
+			return false
+		}
+		iidx.favList[fileIdx].Fav[folderIdx].Charts[musicIdx].EntryId = targetMusic.ID
+		iidx.favList[fileIdx].Fav[folderIdx].Charts[musicIdx].Artist = targetMusic.Artist
+		iidx.favList[fileIdx].Fav[folderIdx].Charts[musicIdx].Title = targetMusic.Title
+		iidx.favList[fileIdx].Fav[folderIdx].Charts[musicIdx].Difficulty = level
 	}
-
-	iidx.favList[fileIdx].Fav[folderIdx].Charts[musicIdx].EntryId = targetMusic.ID
-	iidx.favList[fileIdx].Fav[folderIdx].Charts[musicIdx].Artist = targetMusic.Artist
-	iidx.favList[fileIdx].Fav[folderIdx].Charts[musicIdx].Title = targetMusic.Title
-	iidx.favList[fileIdx].Fav[folderIdx].Charts[musicIdx].Difficulty = level
 
 	bytes, err := json.MarshalIndent(iidx.favList[fileIdx].Fav, "", " ")
 	if err != nil {
@@ -363,7 +379,7 @@ func (iidx *Iidxfavlist) editFavList() {
 			originMusic, idx := iidx.findInputSong(songNum, iidx.favList[fileNum].Fav[folderNum].Charts)
 			var createOrEdited bool
 			if idx > -1 {
-				createOrEdited = iidx.replaceSong(originMusic, fileNum, folderNum, idx)
+				createOrEdited = iidx.editSong(originMusic, fileNum, folderNum, idx)
 			} else {
 				createOrEdited = iidx.createSong(originMusic, fileNum, folderNum)
 			}

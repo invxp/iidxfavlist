@@ -83,3 +83,10 @@ func getInputLevel(level int) string {
 	}
 	return LevelAnother
 }
+
+func deleteSlice[T any](index int, slice []T) []T {
+	if len(slice) == 0 || index >= len(slice) {
+		return slice
+	}
+	return append(slice[:index], slice[index+1:]...)
+}
