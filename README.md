@@ -11,7 +11,7 @@ $ ./iidxfavlist
 1. 能够自定义编辑歌单
 2. 能够方便的模糊查找歌单与游戏系统库的歌曲
 3. 本应用依赖playlist插件
-
+![](resource/game.png)
 ### 使用教程
 ![](resource/menu.png)
 #### 请确保放到beatmaniaIIDX游戏目录下
