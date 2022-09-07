@@ -246,6 +246,44 @@ func (iidx *Iidxfavlist) renameList() {
 	}
 }
 
+func (iidx *Iidxfavlist) deleteFolder(fileIdx, folderIdx int) {
+	chartCount := len(iidx.favList[fileIdx].Fav[folderIdx].Charts)
+	iidx.logf("delete %s.%s(%d songs)(y/N)", iidx.favList[fileIdx].Fav[folderIdx].Name, iidx.favList[fileIdx].Fav[folderIdx].PlayStyle, chartCount)
+	_, input := scanInput()
+	if input != "y" {
+		iidx.logfn("delete canceled")
+		return
+	}
+	iidx.favList[fileIdx].Fav = deleteSlice(folderIdx, iidx.favList[fileIdx].Fav)
+	iidx.favList[fileIdx].ChartCount -= chartCount
+	bytes, err := json.MarshalIndent(iidx.favList[fileIdx].Fav, "", " ")
+	if err != nil {
+		iidx.panic(err)
+	}
+	if err := ioutil.WriteFile(iidx.favList[fileIdx].FileName, bytes, 0666); err != nil {
+		iidx.panic(err)
+	}
+
+	iidx.logfn("delete fav folder saved")
+}
+
+func (iidx *Iidxfavlist) deletePlaylist(fileIdx int) {
+	fileName := iidx.favList[fileIdx].FileName
+	favCount := len(iidx.favList[fileIdx].Fav)
+	chartCount := iidx.favList[fileIdx].ChartCount
+	iidx.logf("delete %s.(%d folders,%d songs)(y/N)", fileName, favCount, chartCount)
+	_, input := scanInput()
+	if input != "y" {
+		iidx.logfn("delete canceled")
+		return
+	}
+	iidx.favList = deleteSlice(fileIdx, iidx.favList)
+	if err := os.Remove(fileName); err != nil {
+		iidx.panic(err)
+	}
+	iidx.logfn("delete playlists")
+}
+
 func (iidx *Iidxfavlist) editSong(music IIDXMusicInfoDetail, fileIdx, folderIdx, musicIdx int) bool {
 	var songNum = 0
 	var delete = false
@@ -272,6 +310,7 @@ func (iidx *Iidxfavlist) editSong(music IIDXMusicInfoDetail, fileIdx, folderIdx,
 			return false
 		}
 		iidx.favList[fileIdx].Fav[folderIdx].Charts = deleteSlice(musicIdx, iidx.favList[fileIdx].Fav[folderIdx].Charts)
+		iidx.favList[fileIdx].ChartCount--
 	} else {
 		targetMusic := iidx.findMusicByID(songNum)
 
@@ -340,28 +379,28 @@ func (iidx *Iidxfavlist) editFavList() {
 		if input == "b" {
 			return
 		}
-		if len(iidx.favList) <= fileNum {
-			continue
-		}
-		if len(input) <= 0 {
+
+		if len(iidx.favList) <= fileNum || len(input) <= 0 {
 			iidx.createFavList("playlists")
 			fileNum = len(iidx.favList) - 1
 		}
-		list := iidx.favList[fileNum]
 
+		list := iidx.favList[fileNum]
 		for i, song := range list.Fav {
 			iidx.logfn("'%s'.%s.%s.%d(songs)", color.BgBlue.Render(i), song.Name, song.PlayStyle, len(song.Charts))
 		}
-		folderNum, input := scanInput("'" + color.BgRed.Render("b") + "' to menu\ninput folder number(default new)")
+
+		folderNum, input := scanInput("'" + color.BgGreen.Render("b") + "' to menu\n" + "'" + color.BgRed.Render("d") + "' to delete playlist\n" + "input folder number(default new)")
 		if input == "b" {
 			continue
 		}
 
-		if len(list.Fav) <= folderNum {
+		if input == "d" {
+			iidx.deletePlaylist(fileNum)
 			continue
 		}
 
-		if len(input) <= 0 {
+		if len(input) <= 0 || len(list.Fav) <= folderNum {
 			iidx.createFolder(iidx.favList[fileNum].FileName, &iidx.favList[fileNum].Fav)
 			iidx.favList[fileNum].ChartCount++
 			folderNum = len(iidx.favList[fileNum].Fav) - 1
@@ -369,9 +408,17 @@ func (iidx *Iidxfavlist) editFavList() {
 
 		for {
 			iidx.printFavSongs(fileNum, folderNum)
-			songNum, input := scanInput("'" + color.BgRed.Render("b") + "' to menu\nselect or input new song id")
+			songNum, input := scanInput("'" + color.BgGreen.Render("b") + "' to menu\n" + "'" + color.BgYellow.Render("s") + "' for search\n" + "'" + color.BgRed.Render("d") + "' to delete folder\n" + "choose action or input new song id")
 			if input == "b" {
 				break
+			}
+			if input == "d" {
+				iidx.deleteFolder(fileNum, folderNum)
+				break
+			}
+			if strings.HasPrefix(input, "s") && len(input) > 2 {
+				iidx.searchFromSongList(strings.TrimSpace(input[2:]))
+				continue
 			}
 			if len(input) <= 0 || songNum == 0 {
 				continue
